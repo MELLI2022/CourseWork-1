@@ -1,4 +1,4 @@
-;
+
 public class Main {
     private static final Employee[] employees = new Employee[10];
 
@@ -16,8 +16,8 @@ public class Main {
 
         System.out.println(employees.length);
 
-        for (int id = 0; id < employees.length; id++){
-            System.out.println(employees[id].toString());
+        for (Employee employee : employees) {
+            System.out.println(employee);
         }
         System.out.println("Сумма затрат на заработные платы за месяц равна " + calculateWage());
         System.out.println("Максимальная заработная плата составляет " + getMaxWage());
@@ -29,8 +29,9 @@ public class Main {
     public static int calculateWage() {
         int sum = 0;
         for (Employee employee : employees) {
-            assert employee != null;
-            sum += employee.getWage();
+            if (employee!=null)
+            //assert employee != null;
+            {sum += employee.getWage();}
         }
         return sum;
     }
@@ -59,17 +60,17 @@ public class Main {
     public static int calculateAverageWage() {
         int sum = 0;
         for (Employee employee : employees) {
-            assert employee != null;
-            sum = calculateWage() / 10;
+            if (employee!=null);
+            sum++;;
         }
-        return sum;
+        return calculateWage() / sum;
 
     }
 
      public static String displayListEmployees() {   //Вывести список сотрудников
          String listEmployees = "";
          for (Employee employee : employees) {
-            System.out.println(employee.getSurnameFirstnameLastname());
+            System.out.println(employee.getSurnameAndFirstnameAndLastname());
         }
        return listEmployees;
         }
