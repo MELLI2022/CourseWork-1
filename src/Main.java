@@ -23,15 +23,15 @@ public class Main {
         System.out.println("Максимальная заработная плата составляет " + getMaxWage());
         System.out.println("Минимальная заработная плата составила " + getMinWage());
         System.out.println("Средняя заработная плата равна " + calculateAverageWage());
-        System.out.println("Список сотрудников  " +displayListEmployees());
+        System.out.println("Список сотрудников  " + displayListEmployees());
     }
 
     public static int calculateWage() {
         int sum = 0;
         for (Employee employee : employees) {
-            if (employee!=null)
-            //assert employee != null;
-            {sum += employee.getWage();}
+            if (employee != null) {
+                sum += employee.getWage();
+            }
         }
         return sum;
     }
@@ -39,44 +39,42 @@ public class Main {
     public static int getMaxWage() {
         int max = Integer.MIN_VALUE;
         for (Employee employee : employees) {
-            if (employee != null && employee.getWage() > max)
+            if (employee != null && employee.getWage() > max) {
                 max = employee.getWage();
+            }
         }
         return max;
-
     }
 
     public static int getMinWage() {
         int min = Integer.MAX_VALUE;
         for (Employee employee : employees) {
-            if (employee != null && employee.getWage() < min)
+            if (employee != null && employee.getWage() < min) {
                 min = employee.getWage();
+            }
         }
         return min;
-
     }
-
 
     public static int calculateAverageWage() {
         int sum = 0;
         for (Employee employee : employees) {
-            if (employee!=null);
-            sum++;;
+            if (employee != null) {
+                sum++;
+            }
         }
         return calculateWage() / sum;
-
     }
 
-     public static String displayListEmployees() {   //Вывести список сотрудников
-         String listEmployees = "";
-         for (Employee employee : employees) {
+    public static String displayListEmployees() {   //Вывести список сотрудников
+        String listEmployees = "";
+        for (Employee employee : employees) {
             System.out.println(employee.getSurnameAndFirstnameAndLastname());
         }
-       return listEmployees;
-        }
-
-
+        return listEmployees;
+    }
 }
+
 
 
 
